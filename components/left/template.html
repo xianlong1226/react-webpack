@@ -1,0 +1,10 @@
+<div class="components_left">
+    <div class="logo">
+        <img src="./images/logo.png" />
+    </div>
+    <ul class="nav">
+        <li data-bind="css:{on:data.indexPage}" class=""><a href="index.html">菁英人才库</a></li>
+        <li data-bind="visible:!data.try(),css:{on:data.candidatePage}" class=""><a href="candidate.html">候选人</a></li>
+        <li data-bind="visible:!data.try(),css:{on:data.jobPage}" class=""><a href="job.html">我的招聘职位</a></li>
+    </ul>
+</div>

@@ -1,0 +1,12 @@
+{
+    "data":{
+        "indexPage":false,
+        "candidatePage":false,
+        "jobPage":false,
+        "messagePage":false,
+        "try":false
+    },
+    "helper":{
+
+    }
+}

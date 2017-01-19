@@ -1,0 +1,9 @@
+.components_left{width:128px;background: #f5f5f5;position: fixed;height: 100%;top: 0;left: 0;z-index: 3;}
+.components_left{
+    .logo{background:#25c5f0;height: 66px;width:128px;}
+    .logo img{position: absolute;margin: 23px 0 0 28px;}
+    .nav{margin-top:24px;font-size: 16px;font-weight: 300;font-style: normal;}
+    .nav li{color:#afafaf;text-align: right;}
+    .nav li.on{color: #333333;}
+    .nav li a{width: 100px;padding:0 23px 25px 0;text-align: right;display: inline-block;cursor: pointer;text-decoration: none;color:inherit;}
+}

@@ -1,0 +1,32 @@
+{
+  "data": {
+    "searchCondition":{
+      "defaultCategorys":[],
+      "moreCategorys":[],
+      "checkedTagIds":"",
+      "jobTag":null,
+      "page":1,
+      "count":10
+    },
+    "chargeRemain":true,
+    "searchResult":{
+      "totalCount":0,
+      "totalPage":0,
+      "examinees":[]
+    },
+    "exportdialogShow":false,
+    "exportdialogHeight":"100%",
+    "inputJobTitle":"",
+    "inputJobTitleError":"",
+    "selectedExaminees":[]
+  },
+  "helper": {
+    "loading": true,
+    "initData":null,
+    "exportClick":null,
+    "exportExaminee":null,
+    "inputJobTitleFocus":null,
+    "inputJobTitleBlur":null,
+    "getExaminee":null
+  }
+}
