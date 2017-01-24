@@ -1,36 +1,8 @@
-var target = "http://192.168.2.113:8888";
-//var target = "http://youthelite.zhaopin.com";
-//var target = "http://54.222.196.139:8080";
-
-var target1 = "http://192.168.5.221:3000";
+var target = "http://127.0.0.1:3000";
 
 var proxy = {
   '/search/user/search': {
     target: target,
-    changeOrigin: true,
-    secure: false,
-    headers:{
-      // Cookie: true
-    }
-  },
-  '/search/category/detail': {
-    target: target,
-    changeOrigin: true,
-    secure: false,
-    headers:{
-      // Cookie: true
-    }
-  },
-  '/work/invite/**':{
-    target: target1,
-    changeOrigin: true,
-    secure: false,
-    headers:{
-      // Cookie: true
-    }
-  },
-  '/work/user/**':{
-    target: target1,
     changeOrigin: true,
     secure: false,
     headers:{
