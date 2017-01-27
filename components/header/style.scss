@@ -1,24 +1,3 @@
 .components_header{
-    height: 66px;
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-}
-.components_header{
-    .bg{height: 66px;width:100%;position: absolute;z-index: -1;}
-    .bg>div.left{float:left;height: 100%;width:50%;background:#25c5f0;}
-    .bg>div.right{float:left;height: 100%;width:50%;background:#009add;}
-    .content{min-width:1024px;width:100%;height:100%;margin:0 auto;background:url('./images/header.png') no-repeat 50% 0;background-size:100%;}
-    .content{
-        .title{font-size: 24px;font-weight: normal;color: #ffffff;text-align: center;line-height: 66px;}
-        .userinfo{position:absolute;top:0;right:0;height: 66px;line-height: 66px;color:#fff;font-weight: normal;font-size:14px;padding-right:22px;}
-        .userinfo{
-            .company{margin-right:37px;}
-            .message{margin-right:37px;padding:5px 10px 0 0; color:#fff; text-decoration:none;}
-            .message.new{background: url('./images/newmessage.png') no-repeat right top;}
-            .zlcoin i{margin-left: 10px;font-style: normal;vertical-align: middle;}
-        }
-    }
+    
 }
