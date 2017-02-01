@@ -1,0 +1,23 @@
+.code{
+    color: #637c84;
+    background: rgb(248, 245, 236);
+    font-size: 12px;
+    padding: 30px 14px 14px;
+    margin: 10px 0;
+    position: relative;
+
+    p{
+        line-height: 20px;
+    }
+}
+.code::before{
+    content: 'Code';
+    background:#f1ede4;
+    color: #c2c0bc;
+    padding: 3px 7px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
