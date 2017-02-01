@@ -33,11 +33,11 @@ class App extends React.Component{
     <p>我们推荐搭配Babel使用React来让你在Javascript代码中使用ES6和JSX。ES6是一组现代Javascript特性，JSX是可以和React配合很好的Javascript语言的扩展。</p>
     <p>首先确认你已经安装了babel-preset-react和babel-preset-es2015，并且在.babelrc文件中配置了他们。</p>
     <Code>
-    <p></p>
+    <p>{'{'}</p>
       <p>"presets": ["es2015", "stage-2", "react"],</p>
       <p>"plugins": ["transform-runtime"],</p>
       <p>"comments": false</p>
-    <p></p>
+    <p>{'}'}</p>
     </Code>
     <h3>Hello World with ES6 and JSX</h3>
     <p>我们推荐使用像webpack或Browserify这样的打包机，这样你就可以写模块化的代码并且把它们一起打包到小的模块里以便优化加载时间。</p>
