@@ -59,6 +59,12 @@ class App extends React.Component{
     </Code>
     <p>就像在JavaScript中一样，它取决于你基于你和你的团队考虑可读性而选择合适的风格。同时记住，不论什么时候条件变的太复杂时，最好提取一个组件。</p>
     <h2>阻止组件渲染</h2>
+    <p>在极少数情况下你可能希望一个组件隐藏它自己，即使这个组件是另一个组件渲染的。用return false代替它的render()方法的输出就行了。</p>
+    <p>在下面的例子中，&lt;WarningBanner /&gt;根据props中warn的值渲染。如果值是false，那么组件就不渲染了：</p>
+    <Code>
+      <img src={image8} />
+    </Code>
+    <p>从组件的render方法返回null不会影响组件生命周期方法的执行。例如，componentWillUpdate和componentDidUpdate依然会被调用。</p>
     </div></Main>
   }
 }
