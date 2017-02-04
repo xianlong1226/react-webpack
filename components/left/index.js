@@ -15,7 +15,7 @@ const items = [
             {id:"c7",title:"条件渲染",url:"conditionalRender.html"},
             {id:"c8",title:"列表和keys",url:"list.html"},
             {id:"c9",title:"表单",url:"form.html"},
-            {id:"c10",title:"提升状态",url:"liftState.html"},
+            {id:"c10",title:"提升state",url:"liftState.html"},
             {id:"c11",title:"构成 vs 继承",url:"composition.html"},
             {id:"c12",title:"思考React",url:"think.html"}
         ]
