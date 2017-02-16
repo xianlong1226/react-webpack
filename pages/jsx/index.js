@@ -2,7 +2,7 @@
 let Code = require('components/code');
 
 require('./style.scss');
-require('./page.html');
+//require('./page.html');
 
 class App extends React.Component{
   constructor(){

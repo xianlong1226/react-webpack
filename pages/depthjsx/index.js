@@ -2,7 +2,7 @@
 let Code = require('components/code');
 
 require('./style.scss');
-require('./page.html');
+//require('./page.html');
 
 let image1 = require('./images/14-1.png');
 let image2 = require('./images/14-2.png');

@@ -1,8 +1,7 @@
-
 var path = require('path');
 var webpack = require('webpack');
 var extractTextPlugin = require('extract-text-webpack-plugin');
-//var htmlWebpackPlugin = require('html-webpack-plugin');
+var htmlWebpackPlugin = require('html-webpack-plugin');
 var glob = require('glob');
 
 //将css提取出来保存为单独的文件
@@ -13,76 +12,72 @@ var extractHtml = new extractTextPlugin('[name].html');
 var config = {
     //入口文件配置
     entry: {
-        'vendors':[
+        'vendors': [
             'jquery',
             'react',
             'react-dom',
-            path.resolve(__dirname , 'vendors/jqPaginator.min.js'),
-            path.resolve(__dirname , 'common/base.js'),
-            path.resolve(__dirname , 'common/base.scss'),
-            path.resolve(__dirname , 'vendors/jquery.cookie.js'),
-            path.resolve(__dirname , 'vendors/url.min.js')//获取url中参数
+            path.resolve(__dirname, 'vendors/jqPaginator.min.js'),
+            path.resolve(__dirname, 'common/base.js'),
+            path.resolve(__dirname, 'common/base.scss'),
+            path.resolve(__dirname, 'vendors/jquery.cookie.js'),
+            path.resolve(__dirname, 'vendors/url.min.js') //获取url中参数
         ]
     },
     //入口文件输出配置
     output: {
-        publicPath:'/',//静态资源前添加的路径，例如css中引用的图片路径会加上publicPath设置的值
-        path:path.resolve(__dirname,'build'),//打包后的文件存放的路径
-        filename: 'assets/js/[name].js',//文件名
-        chunkFilename:'assets/js/chunks/[name].js'//入口文件中动态加载的模块
+        publicPath: '/', //静态资源前添加的路径，例如css中引用的图片路径会加上publicPath设置的值
+        path: path.resolve(__dirname, 'build'), //打包后的文件存放的路径
+        filename: 'assets/js/[name].js', //文件名
+        chunkFilename: 'assets/js/chunks/[name].js' //入口文件中动态加载的模块
     },
     module: {
         //加载器配置
-        loaders: [
-            {
+        loaders: [{
                 //把你的模块中引用的jquery模块公布到全局作用域，可以通过$和jQuery访问。
                 //如果你的模块中没有引用jquery模块，那它将不起作用。
                 test: require.resolve('jquery'),
                 loader: 'expose?$!expose?jQuery'
-            },
-            {
+            }, {
                 test: require.resolve('react'),
                 loader: 'expose?React'
-            }, 
-            {
+            }, {
                 test: require.resolve('react-dom'),
                 loader: 'expose?ReactDOM'
-            },
-            {
+            }, {
                 test: require.resolve(__dirname + '/common/base.js'),
                 loader: 'expose?base'
-            },
-            {
+            }, {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015','react']
+                    presets: ['es2015', 'react']
                 }
-            },
-            {
+            }, {
                 test: /\.json$/,
                 loader: 'json'
             }, {
                 test: /\.s?css$/,
                 loader: extractCss.extract('style', 'css?{"discardComments":{"removeAll":true}}!sass')
-            }, {
-                test: /\.html$/,
-                exclude: /page\.html$/,
-                loader: 'html?minimize=true&removeComments=false'
-            }, {
-                test: /page\.html$/,
-                loader: extractHtml.extract('html?minimize=true&removeComments=false')
-            }, {
+            },
+            // {
+            //     test: /\.html$/,
+            //     exclude: /page\.html$/,
+            //     loader: 'html?minimize=true&removeComments=false'
+            // }, 
+            // {
+            //     test: /page\.html$/,
+            //     loader: extractHtml.extract('html?minimize=true&removeComments=false')
+            // }, 
+            {
                 test: /\.woff2?(\?[\s\S]+)?$/,
                 loader: 'url?limit=10000&name=assets/fonts/[name].[ext]'
             }, {
                 test: /\.(svg|ttf|eot)(\?[\s\S]+)?$/,
                 loader: 'file?limit=10000&name=assets/fonts/[name].[ext]'
-            }, 
-            { 
-                test: /\.(png|jpg|jpeg|gif)$/, 
-                loader: 'url-loader?limit=10000&name=assets/images/[name].[ext]'//css中引用的图片路径将被替换为output.publicPath+这里的name
+            }, {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                loader: 'url-loader?limit=10000&name=assets/images/[name].[ext]' //css中引用的图片路径将被替换为output.publicPath+这里的name
             }
         ]
     },
@@ -101,7 +96,7 @@ var config = {
             'window.jQuery': 'jquery',
             'React': 'react',
             'ReactDOM': 'react-dom',
-            'base': path.resolve(__dirname,'common/base.js')
+            'base': path.resolve(__dirname, 'common/base.js')
         })
     ],
     resolve: {
@@ -112,7 +107,7 @@ var config = {
             path.resolve('.')
         ],
         alias: {
-          
+
         }
     },
     devServer: {
@@ -122,7 +117,7 @@ var config = {
         stats: {
             colors: true
         },
-        proxy:require(path.resolve(__dirname,'locals/index.js')),
+        proxy: require(path.resolve(__dirname, 'locals/index.js')),
         historyApiFallback: false,
         inline: true,
         progress: true
@@ -135,30 +130,43 @@ var config = {
 };
 
 //业务入口文件所在的目录
-var entryDir = path.join(__dirname,'pages/');
-var entries = glob.sync(entryDir + '*').map(function (entry) {
-  return {
-    name: path.basename(entry),
-    path: entry
-  }
+var entryDir = path.join(__dirname, 'pages/');
+var entries = glob.sync(entryDir + '*').map(function(entry) {
+    return {
+        name: path.basename(entry),
+        path: entry
+    }
 });
-entries.forEach(function (entry) {
-  config.entry[entry.name] = [entry.path];
+entries.forEach(function(entry) {
+    //添加entry
+    config.entry[entry.name] = [entry.path];
+
+    //生成html
+    config.plugins.push(new htmlWebpackPlugin({
+        filename: entry.name + '.html',
+        template: entry.path + '/page.html',
+        chunks: ['vendors', 'common', entry.name],
+        hash: true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true
+        }
+    }));
 });
-entries = entries.map(function (entry) {
-  return entry.name;
+entries = entries.map(function(entry) {
+    return entry.name;
 });
 
 //默认会把所有入口文件中的中公共的代码提取出来，生成一个common.js文件
 //new webpack.optimize.CommonsChunkPlugin('js/common.js'),
 //我们也可以指定某几个入口来提取公共代码，生成一个common.js文件
 config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-  name: 'common',
-  chunks: entries
+    name: 'common',
+    chunks: entries
 }));
 config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-  name: 'vendors',
-  minChunks: Infinity
+    name: 'vendors',
+    minChunks: Infinity
 }));
 
 module.exports = config;

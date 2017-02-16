@@ -2,7 +2,7 @@
 let Code = require('components/code');
 
 require('./style.scss');
-require('./page.html');
+//require('./page.html');
 
 class Clock extends React.Component {
   constructor(props) {

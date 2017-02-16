@@ -1,7 +1,7 @@
 ﻿let Main = require('components/main');
 
 require('./style.scss');
-require('./page.html');
+//require('./page.html');
 
 class App extends React.Component{
   constructor(){
