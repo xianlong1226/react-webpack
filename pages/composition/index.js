@@ -4,11 +4,11 @@ let Code = require('components/code');
 require('./style.scss');
 //require('./page.html');
 
-let image1 = require('./images/1.png');
-let image2 = require('./images/2.png');
-let image3 = require('./images/3.png');
-let image4 = require('./images/4.png');
-let image5 = require('./images/5.png');
+let image1 = require('./images/11-1.png');
+let image2 = require('./images/11-2.png');
+let image3 = require('./images/11-3.png');
+let image4 = require('./images/11-4.png');
+let image5 = require('./images/11-5.png');
 
 class App extends React.Component{
   constructor(){

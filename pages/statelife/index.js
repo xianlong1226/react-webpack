@@ -4,21 +4,21 @@ let Code = require('components/code');
 require('./style.scss');
 //require('./page.html');
 
-let image1 = require('./images/1.png');
-let image2 = require('./images/2.png');
-let image3 = require('./images/3.png');
-let image4 = require('./images/4.png');
-let image5 = require('./images/5.png');
-let image6 = require('./images/6.png');
-let image7 = require('./images/7.png');
-let image8 = require('./images/8.png');
-let image9 = require('./images/9.png');
-let image10 = require('./images/10.png');
-let image11 = require('./images/11.png');
-let image12 = require('./images/12.png');
-let image13 = require('./images/13.png');
-let image14 = require('./images/14.png');
-let image15 = require('./images/15.png');
+let image1 = require('./images/5-1.png');
+let image2 = require('./images/5-2.png');
+let image3 = require('./images/5-3.png');
+let image4 = require('./images/5-4.png');
+let image5 = require('./images/5-5.png');
+let image6 = require('./images/5-6.png');
+let image7 = require('./images/5-7.png');
+let image8 = require('./images/5-8.png');
+let image9 = require('./images/5-9.png');
+let image10 = require('./images/5-10.png');
+let image11 = require('./images/5-11.png');
+let image12 = require('./images/5-12.png');
+let image13 = require('./images/5-13.png');
+let image14 = require('./images/5-14.png');
+let image15 = require('./images/5-15.png');
 
 class App extends React.Component{
   constructor(){

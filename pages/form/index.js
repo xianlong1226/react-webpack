@@ -4,16 +4,16 @@ let Code = require('components/code');
 require('./style.scss');
 //require('./page.html');
 
-let image1 = require('./images/1.png');
-let image2 = require('./images/2.png');
-let image3 = require('./images/3.png');
-let image4 = require('./images/4.png');
-let image5 = require('./images/5.png');
-let image6 = require('./images/6.png');
-let image7 = require('./images/7.png');
-let image8 = require('./images/8.png');
-let image9 = require('./images/9.png');
-let image10 = require('./images/10.png');
+let image1 = require('./images/9-1.png');
+let image2 = require('./images/9-2.png');
+let image3 = require('./images/9-3.png');
+let image4 = require('./images/9-4.png');
+let image5 = require('./images/9-5.png');
+let image6 = require('./images/9-6.png');
+let image7 = require('./images/9-7.png');
+let image8 = require('./images/9-8.png');
+let image9 = require('./images/9-9.png');
+let image10 = require('./images/9-10.png');
 
 class App extends React.Component{
   constructor(){
