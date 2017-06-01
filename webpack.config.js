@@ -117,7 +117,7 @@ var config = {
         stats: {
             colors: true
         },
-        proxy: require(path.resolve(__dirname, 'locals/index.js')),
+        proxy: require(path.resolve(__dirname, 'locals/index.js')).proxy,
         historyApiFallback: false,
         inline: true,
         progress: true
